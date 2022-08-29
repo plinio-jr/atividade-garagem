@@ -10,6 +10,17 @@ python-versions = ">=3.7"
 tests = ["pytest", "pytest-asyncio", "mypy (>=0.800)"]
 
 [[package]]
+name = "backports.zoneinfo"
+version = "0.2.1"
+description = "Backport of the standard library zoneinfo module"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.extras]
+tzdata = ["tzdata"]
+
+[[package]]
 name = "django"
 version = "4.1"
 description = "A high-level Python web framework that encourages rapid development and clean, pragmatic design."
@@ -19,6 +30,7 @@ python-versions = ">=3.8"
 
 [package.dependencies]
 asgiref = ">=3.5.2,<4"
+"backports.zoneinfo" = {version = "*", markers = "python_version < \"3.9\""}
 sqlparse = ">=0.2.2"
 tzdata = {version = "*", markers = "sys_platform == \"win32\""}
 
@@ -69,11 +81,12 @@ brotli = ["brotli"]
 
 [metadata]
 lock-version = "1.1"
-python-versions = "^3.10"
-content-hash = "aa02cebf56dfb9db098b6854fcdafaea790d54ce5a6c89d4e7920b0716c0bc06"
+python-versions = "^3.8"
+content-hash = "3cfe6fd7879b14570461d861cc66686b56699c3c82f8b9b1c673f8d8b27bd7f9"
 
 [metadata.files]
 asgiref = []
+"backports.zoneinfo" = []
 django = []
 gunicorn = []
 sqlparse = []
